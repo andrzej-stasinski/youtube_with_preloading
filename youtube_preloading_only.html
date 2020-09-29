@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Preloading</title>
+</head>
+<body>
+
+	<h2>Preloading dla Youtube - rozwiązanie AS</h2>
+	<style>
+	/* youtube -------------------------------- */
+	#video {
+	  /*padding: 20px;*/
+	  border: 1px dashed green;
+	}
+	.embed-video {
+	  position: relative;
+	  padding-top: 56.25%;
+	}
+	.embed-video iframe {
+	  position: absolute;
+	  top:0;left:0;
+	  height: 100%; width:100%;
+	}
+	</style>
+
+	<style>
+		.loadImg {position:absolute; z-index:999; /*left:50px; top:50px;*/
+
+		}
+		.loadImg div {
+
+		}
+		.loadImg div img {
+			width: 150px;
+			height: 108px;
+		}
+	</style>
+
+	<section id="video">
+	    <div class="embed-video">
+	    	<div class="loadImg" id="preloadVideo">
+				<div><img src="loading.gif"/></div>
+			</div>
+	        <iframe src="https://www.youtube.com/embed/Fhskvloj1gE?rel=0&amp;showinfo=0" frameborder="0" onload="document.getElementById('preloadVideo').style.display='none';"></iframe>
+	    </div>
+	</section>
+
+<script>
+		// Ustawienie dla iframe 
+		// ---------------------------------------------------
+
+		// Preloading wyśrodkowany dla youtube
+        var imgPreloading = document.querySelector('.loadImg div img');
+        var frameMap      = document.querySelector('#video');
+        var preloadVideo  = document.querySelector('#preloadVideo');
+
+        console.info('IMG= ' + imgPreloading.offsetHeight + ' ' + imgPreloading.offsetWidth);
+		console.info('iframe= ' + frameMap.offsetHeight + ' ' + frameMap.offsetWidth);
+
+        imgPreloadingTop   = ((frameMap.offsetHeight   - imgPreloading.offsetHeight)/2);
+        // imgPreloadingTop   = ((frameMap.offsetHeight   - 400)/2);
+        imgPreloadingWidth = ((frameMap.offsetWidth    - imgPreloading.offsetWidth)/2);
+		console.info('top = ' + imgPreloadingTop + ' left=' + imgPreloadingWidth);
+
+        preloadVideo.style.top  = imgPreloadingTop + 'px';
+        preloadVideo.style.left = imgPreloadingWidth + 'px'; 	
+
+</script>
+</body>
+</html>
