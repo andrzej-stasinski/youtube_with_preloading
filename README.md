@@ -11,11 +11,11 @@ What the project does - it's the educational part
 
 #### img 2
 
-![This is a alt text.](/skoczek.png "This is a sample image.")
+<img src="https://loremflickr.com/320/240" alt="drawing" width="300" title="some cat"/>
 
 #### img 3
 
-<img src="skoczek.png" alt="drawing" width="200"/>
+<img src="skoczek.png" alt="drawing" width="300"/>
 
 
 
