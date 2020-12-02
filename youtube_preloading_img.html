@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Preload youtube 5</title>
+	<title>Preload youtube</title>
 </head>
 <body>
 	
-	<h2>Preloading 5 dla youtube - stałe wymiary loadera </h2>
+	<h2>Preloading for youtube</h2>
 	<style>
 	/* youtube -------------------------------- */
 	#video {
@@ -23,15 +23,20 @@
 	  height: 100%; width:100%;
 	}
 	#loadImg {
-		background-image: url("rekin2.jpg");
+		background-image: url("skoczek.png");
 		background-size: cover;
 		background-position: center;
 		background-color: yellow;
 		background-repeat: no-repeat
 	}	
+	#loadImg{
+		position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;
+	}
+
 	#loadImg div {
-		background-image: url("loading1.gif");
-		/*background-size: cover;*/
+		background-image: url("loading.gif");
+		/* background-size: cover; */
+		background-size: 300px; /* arange size */
 		background-position: center;
 		background-repeat: no-repeat;
 	}	
@@ -39,27 +44,16 @@
 		height: 100%; width:100%;
 		z-index:2;
 	}
-	</style>	
-	<style>
-	#loadImg{
-		position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;
-	}
 	</style>
+
 	<section id="video">
 	    <div class="embed-video">
 			<div id="loadImg">
 				<div></div>
-				<!-- <div><img src="loading1.gif" /></div> -->
 			</div>
 	        <iframe width="1280" height="720" src="https://www.youtube.com/embed/Fhskvloj1gE?rel=0&amp;showinfo=0" frameborder="0" onload="document.getElementById('loadImg').style.display='none';"></iframe>
 	    </div>
 	</section>
-
-	<!-- <img src="loading1.gif" style="width:100%;"> -->
-
-
-
-
 
 </body>
 </html>
